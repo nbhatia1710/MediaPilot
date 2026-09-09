@@ -45,7 +45,7 @@ export default function ToolFeature() {
                     Works with all your favourite tools
                 </h2>
                 <p className="max-w-md text-sm text-muted-foreground sm:text-base">
-                    With Axis, you never have to learn a new tool. Use what you want.
+                    With MediaPilot, you never have to learn a new tool. Use what you want.
                 </p>
             </div>
 

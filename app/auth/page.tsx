@@ -20,14 +20,16 @@ const Page = () => {
                 sizes="100vw"
             />
             <div className="relative z-10 flex flex-col items-center">
-                <Image
-                    className="ml-2 h-12 w-20 invert"
-                    src="/logo/templates/axis/light-logo.svg"
-                    alt="Light Logo"
-                    width={100}
-                    height={100}
-                    priority
-                />
+                <Link href="/">
+                    <Image
+                        className="h-10 w-auto object-contain brightness-0 invert"
+                        src="/logo/mediapilot.png"
+                        alt="MediaPilot Logo"
+                        width={180}
+                        height={60}
+                        priority
+                    />
+                </Link>
             </div>
 
             <Card className="relative z-10 w-full max-w-105 border-0 bg-background dark:bg-background/80 shadow-xl backdrop-blur-sm rounded-4xl">

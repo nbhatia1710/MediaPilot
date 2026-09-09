@@ -40,7 +40,7 @@ const Pricing = () => {
                         Run your consulting business with less overhead
                     </h2>
                     <p className="mt-4 text-sm text-white/70 sm:text-base">
-                        With Axis, you never have to learn a new tool. Use what you want.
+                        With MediaPilot, you never have to learn a new tool. Use what you want.
                     </p>
                 </div>
 
@@ -48,7 +48,7 @@ const Pricing = () => {
                     <div className="flex flex-col md:flex-row">
                         <div className="flex flex-col border-b border-border/30 p-8 md:basis-2/5 md:border-b-0 md:border-r md:p-10">
                             <h3 className="text-center text-4xl font-medium text-foreground">
-                                Axis
+                                MediaPilot
                             </h3>
                             <p className="mt-1 text-center text-lg text-muted-foreground">
                                 For independent consultants
@@ -91,7 +91,7 @@ const Pricing = () => {
 
                             <div className="mt-8 border-t border-border/30 pt-6">
                                 <p className="text-sm leading-relaxed text-muted-foreground">
-                                    Axis is designed for relationship-driven work. Manage clients,
+                                    MediaPilot is designed for relationship-driven work. Manage clients,
                                     track deals, and stay on top of follow-ups—without the
                                     complexity of traditional CRMs. Companies using our platform
                                     include:

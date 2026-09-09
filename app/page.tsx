@@ -10,8 +10,6 @@ import Stats from "@/components/stats";
 import Testimonials from "@/components/testimonials";
 import Pricing from "@/components/pricing";
 import Footer from "@/components/footer";
-import Image from "next/image";
-import { ThemeToggle } from "@/components/theme-switch";
 
 const Page = () => {
   return (
@@ -35,16 +33,6 @@ const Page = () => {
         <Pricing />
         <Footer />
       </div>
-      <section className="flex flex-row items-center justify-between gap-4 border-t border-border py-4 mx-4">
-        <Image
-          src="/logo/templates/axis/discord.svg"
-          alt="Discord Logo"
-          width={100}
-          height={100}
-          className="h-12 w-12 bg-muted-foreground/70 dark:bg-muted p-3 rounded-full grayscale"
-        />
-        <ThemeToggle />
-      </section>
     </div>
   );
 };

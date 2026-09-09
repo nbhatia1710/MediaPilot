@@ -11,7 +11,7 @@ const testimonials = [
         content: (
             <>
                 Finally a CRM that doesn&apos;t feel like a sales tool.{" "}
-                <span className="text-blue-500">@axis_official</span> actually fits how
+                <span className="text-blue-500">@mediapilot_official</span> actually fits how
                 I manage client work day to day.
             </>
         ),
@@ -24,7 +24,7 @@ const testimonials = [
         content: (
             <>
                 I&apos;ve tried way too many CRMs.{" "}
-                <span className="text-blue-500">@axis_official</span> is the first one I
+                <span className="text-blue-500">@mediapilot_official</span> is the first one I
                 didn&apos;t abandon after a week.
             </>
         ),
@@ -35,7 +35,7 @@ const testimonials = [
         handle: "@samconsults",
         content: (
             <>
-                <span className="text-blue-500">@axis_official</span> Love how client
+                <span className="text-blue-500">@mediapilot_official</span> Love how client
                 history, proposals, and follow-ups live in one place. No clutter, no
                 overthinking.
             </>
@@ -48,7 +48,7 @@ const testimonials = [
         content: (
             <>
                 This feels built for consultants, not sales teams pretending to be
-                consultants. <span className="text-blue-500">@axis_official</span>
+                consultants. <span className="text-blue-500">@mediapilot_official</span>
             </>
         ),
     },
@@ -58,7 +58,7 @@ const testimonials = [
         handle: "@jordanbuilds",
         content: (
             <>
-                <span className="text-blue-500">@axis_official</span> replaced my messy
+                <span className="text-blue-500">@mediapilot_official</span> replaced my messy
                 mix of Notion, spreadsheets, and reminders. Way calmer now.
             </>
         ),
@@ -70,7 +70,7 @@ const testimonials = [
         content: (
             <>
                 Set this up in under an hour and actually kept using it. That alone says
-                a lot. Amazing <span className="text-blue-500">@axis_official</span>
+                a lot. Amazing <span className="text-blue-500">@mediapilot_official</span>
             </>
         ),
         verified: true,
@@ -85,7 +85,7 @@ const Testimonials = () => {
                     From consultants who wanted a simpler CRM.
                 </h2>
                 <p className="mx-auto mt-4 max-w-2xl text-muted-foreground text-base">
-                    Real feedback from consultants using Axis to manage clients,
+                    Real feedback from consultants using MediaPilot to manage clients,
                     proposals, and deals—without the usual CRM mess.
                 </p>
             </div>

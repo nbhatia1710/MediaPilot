@@ -37,7 +37,7 @@ const Feature = () => {
         >
             <div className="mb-12 text-center lg:mb-16 max-lg:hidden">
                 <h2 className="text-3xl font-medium tracking-tight text-foreground sm:text-4xl">
-                    Axis is designed for you
+                    MediaPilot is designed for you
                 </h2>
                 <p className="mt-4 text-sm text-muted-foreground sm:text-lg">
                     Everything you need to manage clients and deals—nothing you don&apos;t
@@ -125,7 +125,7 @@ const Feature = () => {
 
                 <section className="flex flex-col gap-4">
                     <p className="text-center text-foreground text-2xl">
-                        Axis is designed for you
+                        MediaPilot is designed for you
                     </p>
                     <p className="text-center text-muted-foreground">
                         Everything you need to manage clients and deals—nothing you don&apos;t

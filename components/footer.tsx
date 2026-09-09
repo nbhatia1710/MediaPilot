@@ -47,7 +47,15 @@ const Footer = () => {
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-            <Image className="dark:invert" src="/logo/templates/axis/light-logo.svg" alt="Light Logo" width={100} height={100} />
+            <Link href="/" className="flex items-center">
+                <Image
+                    className="h-8 w-auto object-contain"
+                    src="/logo/mediapilot.png"
+                    alt="MediaPilot Logo"
+                    width={150}
+                    height={50}
+                />
+            </Link>
             <ul className="grid grid-cols-4 gap-2 md:gap-8 items-center justify-center">
                 {links.map((link) => (
                     <li key={link.name} className="flex flex-row items-center gap-1 hover:text-primary transition-all duration-300 text-muted-foreground">
@@ -62,7 +70,7 @@ const Footer = () => {
                     </Link>
                 ))}
             </section>
-            <p className="text-muted-foreground">&copy; {new Date().getFullYear()} Axis. All rights reserved.</p>
+            <p className="text-muted-foreground">&copy; {new Date().getFullYear()} MediaPilot. All rights reserved.</p>
         </motion.div>
     )
 }

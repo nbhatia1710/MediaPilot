@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ThemeToggle } from "./theme-switch";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +71,7 @@ const Navbar = () => {
                 transition={{ duration: 0.2 }}
             >
                 <motion.div
-                    className="flex flex-row items-center justify-between gap-4 rounded-full border border-border dark:border-muted-foreground/20 p-2"
+                    className="flex flex-row items-center justify-between gap-4 rounded-full border border-border p-2"
                     animate={{
                         backgroundColor: isScrolled
                             ? "hsl(var(--background) / 0.8)"
@@ -84,13 +83,16 @@ const Navbar = () => {
                     }}
                     transition={{ duration: 0.3 }}
                 >
-                    <Image
-                        className="ml-2 h-12 w-20 dark:invert"
-                        src="/logo/templates/axis/light-logo.svg"
-                        alt="Light Logo"
-                        width={100}
-                        height={100}
-                    />
+                    <Link href="/" className="flex items-center pl-3 py-1">
+                        <Image
+                            className="h-12 md:h-14 lg:h-16 w-auto object-contain transition-all"
+                            src="/logo/mediapilot.png"
+                            alt="MediaPilot Logo"
+                            width={260}
+                            height={86}
+                            priority
+                        />
+                    </Link>
 
                     <section className="hidden flex-row items-center gap-4 lg:flex">
                         <div className="flex flex-row gap-8">
@@ -108,14 +110,13 @@ const Navbar = () => {
                             onClick={() => router.push(authPath)}>
                             Log In
                         </Button>
-                        <ThemeToggle />
-                        <Button className="rounded-full" size="lg">
+                        <Button className="rounded-full px-8" size="lg">
                             Book a call
                         </Button>
                     </section>
 
                     <section className="flex flex-row items-center gap-2 lg:hidden">
-                        <Button className="rounded-full" size="default">
+                        <Button className="rounded-full px-8" size="default">
                             Book a call
                         </Button>
                         <Button
@@ -189,13 +190,12 @@ const Navbar = () => {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.2, delay: 0.25 }}
-                                    className="flex flex-row items-center justify-between gap-2"
+                                    className="flex flex-row items-center justify-end gap-2"
                                 >
                                     <Button variant="ghost" className="font-medium hover:bg-transparent hover:text-muted-foreground hover:!bg-transparent"
                                         onClick={() => router.push(authPath)}>
                                         Log In
                                     </Button>
-                                    <ThemeToggle />
                                 </motion.div>
                             </div>
                         </motion.div>
