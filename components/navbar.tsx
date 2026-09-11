@@ -112,6 +112,13 @@ const Navbar = () => {
                             </Button>
                         </Show>
                         <Show when="signed-in">
+                            <Button
+                                variant="outline"
+                                className="rounded-full font-medium"
+                                onClick={() => router.push("/dashboard")}
+                            >
+                                Dashboard
+                            </Button>
                             <UserButton />
                         </Show>
                         <Button className="rounded-full px-8" size="lg">
@@ -203,6 +210,16 @@ const Navbar = () => {
                                         </Button>
                                     </Show>
                                     <Show when="signed-in">
+                                        <Button
+                                            variant="outline"
+                                            className="rounded-full font-medium"
+                                            onClick={() => {
+                                                setIsOpen(false);
+                                                router.push("/dashboard");
+                                            }}
+                                        >
+                                            Dashboard
+                                        </Button>
                                         <UserButton />
                                     </Show>
                                 </motion.div>

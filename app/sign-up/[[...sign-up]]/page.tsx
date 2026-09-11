@@ -5,7 +5,11 @@ import { clerkAuthAppearance } from "@/lib/clerk-appearance";
 export default function SignUpPage() {
   return (
     <AuthShell>
-      <SignUp appearance={clerkAuthAppearance} />
+      <SignUp
+        appearance={clerkAuthAppearance}
+        fallbackRedirectUrl="/dashboard"
+        signInUrl="/sign-in"
+      />
     </AuthShell>
   );
 }
