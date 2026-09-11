@@ -1,11 +1,12 @@
 "use client";
 
+import { Show, UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
@@ -15,8 +16,6 @@ const Navbar = () => {
     const { scrollY } = useScroll();
 
     const router = useRouter();
-    const pathname = usePathname();
-    const authPath = `${pathname.replace(/\/$/, "")}/auth`;
 
     const links = [
         { name: "Features", hasChildren: true },
@@ -106,10 +105,15 @@ const Navbar = () => {
                                 </Link>
                             ))}
                         </div>
-                        <Button variant="ghost" className="font-medium hover:!bg-transparent cursor-pointer transition-colors hover:text-muted-foreground"
-                            onClick={() => router.push(authPath)}>
-                            Log In
-                        </Button>
+                        <Show when="signed-out">
+                            <Button variant="ghost" className="font-medium hover:!bg-transparent cursor-pointer transition-colors hover:text-muted-foreground"
+                                onClick={() => router.push("/sign-in")}>
+                                Log In
+                            </Button>
+                        </Show>
+                        <Show when="signed-in">
+                            <UserButton />
+                        </Show>
                         <Button className="rounded-full px-8" size="lg">
                             Book a call
                         </Button>
@@ -192,10 +196,15 @@ const Navbar = () => {
                                     transition={{ duration: 0.2, delay: 0.25 }}
                                     className="flex flex-row items-center justify-end gap-2"
                                 >
-                                    <Button variant="ghost" className="font-medium hover:bg-transparent hover:text-muted-foreground hover:!bg-transparent"
-                                        onClick={() => router.push(authPath)}>
-                                        Log In
-                                    </Button>
+                                    <Show when="signed-out">
+                                        <Button variant="ghost" className="font-medium hover:bg-transparent hover:text-muted-foreground hover:!bg-transparent"
+                                            onClick={() => router.push("/sign-in")}>
+                                            Log In
+                                        </Button>
+                                    </Show>
+                                    <Show when="signed-in">
+                                        <UserButton />
+                                    </Show>
                                 </motion.div>
                             </div>
                         </motion.div>

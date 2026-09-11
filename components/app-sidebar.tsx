@@ -11,14 +11,14 @@ import {
 export function AppSidebar() {
   return (
     <Sidebar>
-      <SidebarHeader className="px-4 py-4">
+      <SidebarHeader className="pt-2 pb-4 pl-0 pr-4">
         <Image
           src="/logo/mediapilot.png"
           alt="MediaPilot Logo"
           width={260}
           height={86}
           priority
-          className="h-16 w-auto object-contain"
+          className="-ml-[9px] h-16 w-auto object-contain"
         />
       </SidebarHeader>
       <SidebarContent />
