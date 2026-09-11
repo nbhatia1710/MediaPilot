@@ -1,13 +1,19 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import { shadcn } from "@clerk/ui/themes";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  weight: ["300", "400", "500", "600", "700"],
+const satoshi = localFont({
+  src: [
+    { path: "./fonts/Satoshi-Light.woff2", weight: "300", style: "normal" },
+    { path: "./fonts/Satoshi-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Satoshi-Medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/Satoshi-Bold.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/Satoshi-Black.woff2", weight: "900", style: "normal" },
+  ],
+  variable: "--font-satoshi",
+  display: "swap",
 });
 
 export const metadata = {
@@ -16,7 +22,7 @@ export const metadata = {
 };
 
 const fontSans =
-  "var(--font-inter), ui-sans-serif, system-ui, sans-serif";
+  "var(--font-satoshi), ui-sans-serif, system-ui, sans-serif";
 
 export default function RootLayout({
   children,
@@ -26,12 +32,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} bg-background font-light w-full text-foreground`}
+        className={`${satoshi.variable} bg-background font-light w-full text-foreground`}
         style={{ fontFamily: fontSans }}
       >
         <ClerkProvider appearance={{ theme: shadcn }}>
           <div
-            className={`${inter.variable} min-h-screen w-full bg-background font-light text-foreground`}
+            className={`${satoshi.variable} min-h-screen w-full bg-background font-light text-foreground`}
             style={{ fontFamily: fontSans }}
           >
             <ThemeProvider
