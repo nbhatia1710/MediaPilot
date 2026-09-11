@@ -126,9 +126,16 @@ const Navbar = () => {
                     </section>
 
                     <section className="flex flex-row items-center gap-2 lg:hidden">
-                        <Button className="rounded-full px-8" size="default">
-                            Book a call
-                        </Button>
+                        <Show when="signed-in">
+                            <Button
+                                variant="outline"
+                                className="rounded-full px-5 font-medium"
+                                size="default"
+                                onClick={() => router.push("/dashboard")}
+                            >
+                                Dashboard
+                            </Button>
+                        </Show>
                         <Button
                             variant="ghost"
                             size="icon"
@@ -200,24 +207,21 @@ const Navbar = () => {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.2, delay: 0.25 }}
-                                    className="flex flex-row items-center justify-end gap-2"
+                                    className="flex flex-col gap-2 pt-1"
                                 >
+                                    <Button className="w-full rounded-full py-5 font-medium" size="default">
+                                        Book a call
+                                    </Button>
                                     <Show when="signed-out">
-                                        <Button variant="ghost" className="font-medium hover:bg-transparent hover:text-muted-foreground hover:!bg-transparent"
-                                            onClick={() => router.push("/sign-in")}>
-                                            Log In
-                                        </Button>
-                                    </Show>
-                                    <Show when="signed-in">
                                         <Button
-                                            variant="outline"
-                                            className="rounded-full font-medium"
+                                            variant="ghost"
+                                            className="w-full font-medium hover:bg-transparent hover:text-muted-foreground hover:!bg-transparent"
                                             onClick={() => {
                                                 setIsOpen(false);
-                                                router.push("/dashboard");
+                                                router.push("/sign-in");
                                             }}
                                         >
-                                            Dashboard
+                                            Log In
                                         </Button>
                                     </Show>
                                 </motion.div>
