@@ -1,6 +1,6 @@
 "use client";
 
-import { Show, UserButton } from "@clerk/nextjs";
+import { Show } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
@@ -119,7 +119,6 @@ const Navbar = () => {
                             >
                                 Dashboard
                             </Button>
-                            <UserButton />
                         </Show>
                         <Button className="rounded-full px-8" size="lg">
                             Book a call
@@ -220,7 +219,6 @@ const Navbar = () => {
                                         >
                                             Dashboard
                                         </Button>
-                                        <UserButton />
                                     </Show>
                                 </motion.div>
                             </div>
