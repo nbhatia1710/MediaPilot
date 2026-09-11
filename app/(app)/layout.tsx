@@ -5,7 +5,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 
-const DashboardPage = () => {
+const AppLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -13,10 +13,10 @@ const DashboardPage = () => {
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
           <SidebarTrigger />
         </header>
-        <div className="flex flex-1 flex-col p-4" />
+        {children}
       </SidebarInset>
     </SidebarProvider>
   )
 }
 
-export default DashboardPage
+export default AppLayout
