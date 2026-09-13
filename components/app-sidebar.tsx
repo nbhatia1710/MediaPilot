@@ -62,6 +62,8 @@ export function AppSidebar() {
                       <SidebarMenuButton
                         render={<Link href={item.url} />}
                         isActive={pathname === item.url}
+                        size="lg"
+                        className="h-14 gap-3 px-4 text-base [&_svg]:size-6"
                       >
                         <Icon />
                         <span>{item.title}</span>
