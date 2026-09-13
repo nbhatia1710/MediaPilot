@@ -30,10 +30,10 @@ const Hero = () => {
       </section>
       <div className="relative">
         <Image
-          src="/images/hero.png"
-          alt="MediaPilot Hero Preview"
-          width={1024}
-          height={509}
+          src="/images/templates/axis/hero.svg"
+          alt="Hero"
+          width={1200}
+          height={800}
           className="w-full max-w-7xl h-auto rounded-xl lg:rounded-[2.5rem]"
           priority
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
