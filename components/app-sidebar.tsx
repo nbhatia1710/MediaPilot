@@ -3,7 +3,6 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, Newspaper, Upload } from "lucide-react"
 import {
   Sidebar,
   SidebarContent,
@@ -21,14 +20,14 @@ const navSections = [
   {
     title: "Overview",
     items: [
-      { title: "Dashboard", url: "/dashboard", icon: LayoutDashboard },
+      { title: "Dashboard", url: "/dashboard", icon: "/icons/glass/dashboard.svg" },
     ],
   },
   {
     title: "Press Releases",
     items: [
-      { title: "My Releases", url: "/releases", icon: Newspaper },
-      { title: "Submit Releases", url: "/releases/new", icon: Upload },
+      { title: "My Releases", url: "/releases", icon: "/icons/glass/releases.svg" },
+      { title: "Submit Releases", url: "/releases/new", icon: "/icons/glass/submit.svg" },
     ],
   },
 ]
@@ -54,23 +53,28 @@ export function AppSidebar() {
             <SidebarGroupLabel>{section.title}</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {section.items.map((item) => {
-                  const Icon = item.icon
-
-                  return (
-                    <SidebarMenuItem key={item.url}>
-                      <SidebarMenuButton
-                        render={<Link href={item.url} />}
-                        isActive={pathname === item.url}
-                        size="lg"
-                        className="h-14 gap-3 px-4 text-base [&_svg]:size-6"
-                      >
-                        <Icon />
-                        <span>{item.title}</span>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  )
-                })}
+                {section.items.map((item) => (
+                  <SidebarMenuItem key={item.url}>
+                    <SidebarMenuButton
+                      render={<Link href={item.url} />}
+                      isActive={pathname === item.url}
+                      size="lg"
+                      className="h-14 gap-3 px-4 text-base"
+                    >
+                      <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-b from-neutral-800 to-neutral-950 ring-1 ring-white/10">
+                        <Image
+                          src={item.icon}
+                          alt=""
+                          width={24}
+                          height={24}
+                          unoptimized
+                          className="size-6"
+                        />
+                      </span>
+                      <span>{item.title}</span>
+                    </SidebarMenuButton>
+                  </SidebarMenuItem>
+                ))}
               </SidebarMenu>
             </SidebarGroupContent>
           </SidebarGroup>
