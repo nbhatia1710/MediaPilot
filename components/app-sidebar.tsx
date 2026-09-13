@@ -20,14 +20,14 @@ const navSections = [
   {
     title: "Overview",
     items: [
-      { title: "Dashboard", url: "/dashboard", icon: "/icons/glass/dashboard.svg" },
+      { title: "Dashboard", url: "/dashboard", icon: "/icons/fill/dashboard.svg" },
     ],
   },
   {
     title: "Press Releases",
     items: [
-      { title: "My Releases", url: "/releases", icon: "/icons/glass/releases.svg" },
-      { title: "Submit Releases", url: "/releases/new", icon: "/icons/glass/submit.svg" },
+      { title: "My Releases", url: "/releases", icon: "/icons/fill/releases.svg" },
+      { title: "Submit Releases", url: "/releases/new", icon: "/icons/fill/submit.svg" },
     ],
   },
 ]
@@ -61,16 +61,14 @@ export function AppSidebar() {
                       size="lg"
                       className="h-14 gap-3 px-4 text-base"
                     >
-                      <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-b from-neutral-800 to-neutral-950 ring-1 ring-white/10">
-                        <Image
-                          src={item.icon}
-                          alt=""
-                          width={24}
-                          height={24}
-                          unoptimized
-                          className="size-6"
-                        />
-                      </span>
+                      <Image
+                        src={item.icon}
+                        alt=""
+                        width={24}
+                        height={24}
+                        unoptimized
+                        className="size-6 shrink-0"
+                      />
                       <span>{item.title}</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
