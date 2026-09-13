@@ -59,7 +59,7 @@ export function AppSidebar() {
                       render={<Link href={item.url} />}
                       isActive={pathname === item.url}
                       size="lg"
-                      className="h-14 gap-3 px-4 text-base"
+                      className="h-14 gap-3 px-4 text-base font-bold"
                     >
                       <Image
                         src={item.icon}
