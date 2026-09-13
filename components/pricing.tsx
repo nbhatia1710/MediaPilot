@@ -61,12 +61,12 @@ const Pricing = () => {
                             </p>
 
                             <div className="mt-8 flex flex-col gap-3">
-                                <Button className="w-full rounded-full">
+                                <Button className="w-full rounded-none h-9 px-5">
                                     Get started
                                 </Button>
                                 <Button
                                     variant="outline"
-                                    className="w-full rounded-full border-foreground/20 bg-transparent"
+                                    className="w-full rounded-none h-9 px-5 border-foreground/20 bg-transparent"
                                 >
                                     Book a demo
                                 </Button>

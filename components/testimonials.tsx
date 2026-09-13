@@ -131,7 +131,7 @@ const Testimonials = () => {
             <div className="mt-12 flex justify-center">
                 <Button
                     variant="outline"
-                    className="rounded-full px-6 text-sm font-medium"
+                    className="rounded-none h-9 px-5 text-sm font-medium"
                 >
                     See all tweets
                 </Button>

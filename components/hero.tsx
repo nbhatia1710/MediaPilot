@@ -22,7 +22,7 @@ const Hero = () => {
             Guaranteed placements with live links on Yahoo Finance, Business Insider, AP News, and 500+ trusted publications. Build instant social proof, authority, and AI visibility.
           </p>
           <div className="flex flex-row">
-            <Button className="rounded-full px-10 py-6 text-base w-full sm:w-auto font-medium shadow-sm hover:shadow-md transition-all">
+            <Button className="rounded-none h-9 px-5 text-base w-full sm:w-auto font-medium shadow-sm hover:shadow-md transition-all">
               Book a call
             </Button>
           </div>

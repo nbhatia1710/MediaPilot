@@ -114,13 +114,13 @@ const Navbar = () => {
                         <Show when="signed-in">
                             <Button
                                 variant="outline"
-                                className="rounded-full font-medium"
+                                className="rounded-none h-9 px-5 font-medium"
                                 onClick={() => router.push("/dashboard")}
                             >
                                 Dashboard
                             </Button>
                         </Show>
-                        <Button className="rounded-full px-8" size="lg">
+                        <Button className="rounded-none h-9 px-5">
                             Book a call
                         </Button>
                     </section>
@@ -129,7 +129,7 @@ const Navbar = () => {
                         <Show when="signed-in">
                             <Button
                                 variant="outline"
-                                className="rounded-full px-5 font-medium"
+                                className="rounded-none h-9 px-5 font-medium"
                                 size="default"
                                 onClick={() => router.push("/dashboard")}
                             >
@@ -139,7 +139,7 @@ const Navbar = () => {
                         <Button
                             variant="ghost"
                             size="icon"
-                            className="rounded-full"
+                            className="rounded-none"
                             onClick={() => setIsOpen(!isOpen)}
                         >
                             <AnimatePresence mode="wait" initial={false}>
@@ -209,13 +209,13 @@ const Navbar = () => {
                                     transition={{ duration: 0.2, delay: 0.25 }}
                                     className="flex flex-col gap-2 pt-1"
                                 >
-                                    <Button className="w-full rounded-full py-5 font-medium" size="default">
+                                    <Button className="w-full rounded-none h-9 px-5 font-medium" size="default">
                                         Book a call
                                     </Button>
                                     <Show when="signed-out">
                                         <Button
                                             variant="ghost"
-                                            className="w-full font-medium hover:bg-transparent hover:text-muted-foreground hover:!bg-transparent"
+                                            className="w-full rounded-none font-medium hover:bg-transparent hover:text-muted-foreground hover:!bg-transparent"
                                             onClick={() => {
                                                 setIsOpen(false);
                                                 router.push("/sign-in");
