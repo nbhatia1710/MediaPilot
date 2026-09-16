@@ -3,7 +3,6 @@
 import BlurredOrb from "@/components/blurred-orb";
 import Navbar from "@/components/navbar";
 import Hero from "@/components/hero";
-import Companies from "@/components/companies";
 import Feature from "@/components/feature";
 import ToolFeature from "@/components/tools";
 import Stats from "@/components/stats";
@@ -21,11 +20,8 @@ const Page = () => {
           background: `radial-gradient(circle at center, var(--color-hero-start) 00%, var(--color-hero-mid) 100%, var(--color-hero-end) 100%)`,
         }}
       />
-      <div className="flex flex-col gap-24 lg:gap-44 mt-32 mb-14 lg:my-28  mx-auto w-full">
-        <div className="flex flex-col gap-24 lg:gap-12">
-          <Hero />
-          <Companies />
-        </div>
+      <div className="flex flex-col gap-24 lg:gap-44 mt-32 mb-14 lg:my-28 mx-auto w-full">
+        <Hero />
         <Feature />
         <ToolFeature />
         <Stats />

@@ -103,36 +103,120 @@ const publications: Publication[] = [
   },
 ];
 
+const EmergingText = ({
+  text,
+  className = "",
+  delayOffset = 0,
+  stagger = 0.02,
+}: {
+  text: string;
+  className?: string;
+  delayOffset?: number;
+  stagger?: number;
+}) => {
+  const words = text.split(" ");
+  let globalIndex = 0;
+
+  return (
+    <span className={className}>
+      {words.map((word, wIdx) => {
+        const letters = word.split("");
+        return (
+          <span key={wIdx} className="inline-block whitespace-nowrap">
+            {letters.map((char) => {
+              const idx = globalIndex++;
+              // Golden angle polar scatter calculation for 360-degree directional emergence
+              const angle = (idx * 137.5) * (Math.PI / 180);
+              const radius = 100 + (idx % 6) * 30; // 100px to 250px outward range
+              const initialX = Math.cos(angle) * radius;
+              const initialY = Math.sin(angle) * radius;
+              const initialRotate = ((idx % 7) - 3) * 25; // -75deg to +75deg
+              const initialScale = idx % 2 === 0 ? 0.3 : 2.0;
+
+              return (
+                <motion.span
+                  key={idx}
+                  className="inline-block"
+                  initial={{
+                    opacity: 0,
+                    x: initialX,
+                    y: initialY,
+                    rotate: initialRotate,
+                    scale: initialScale,
+                    filter: "blur(6px)",
+                  }}
+                  animate={{
+                    opacity: 1,
+                    x: 0,
+                    y: 0,
+                    rotate: 0,
+                    scale: 1,
+                    filter: "blur(0px)",
+                  }}
+                  transition={{
+                    duration: 0.95,
+                    delay: delayOffset + idx * stagger,
+                    ease: [0.22, 1, 0.36, 1], // easeOutQuart
+                  }}
+                >
+                  {char}
+                </motion.span>
+              );
+            })}
+            {wIdx < words.length - 1 && <span className="inline-block">&nbsp;</span>}
+          </span>
+        );
+      })}
+    </span>
+  );
+};
+
 const Hero = () => {
-  // Duplicate for smooth vertical infinite marquee loop
+  // Duplicate list for seamless vertical infinite marquee loop
   const scrollItems = [...publications, ...publications, ...publications];
 
   return (
-    <motion.div
-      className="flex flex-col gap-12 lg:gap-16 items-center justify-center py-2 lg:pt-8 w-full max-w-7xl mx-auto"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.15 }}
-      transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-    >
+    <div className="flex flex-col gap-12 lg:gap-16 items-center justify-center py-2 lg:pt-8 w-full max-w-7xl mx-auto">
       <section className="flex flex-col lg:flex-row items-center justify-between w-full max-xl:gap-6 max-w-7xl lg:max-w-6xl">
+        {/* Animated Hero Title with letters emerging from all around */}
         <h1 className="max-md:font-medium text-3xl md:text-5xl lg:text-6xl xl:text-7xl lg:max-w-lg xl:max-w-2xl tracking-tighter text-center lg:text-left">
-          Get featured on 500+ top media outlets in 48 hours
+          <EmergingText
+            text="Get featured on 500+ top media outlets in 48 hours"
+            delayOffset={0.05}
+            stagger={0.02}
+          />
         </h1>
+
         <section className="flex flex-col gap-8">
+          {/* Animated Sub-Hero Text with letters emerging from all around */}
           <p className="text-md md:text-xl max-w-xl lg:max-w-md text-center lg:text-left text-muted-foreground">
-            Guaranteed placements with live links on Yahoo Finance, Business Insider, AP News, and 500+ trusted publications. Build instant social proof, authority, and AI visibility.
+            <EmergingText
+              text="Guaranteed placements with live links on Yahoo Finance, Business Insider, AP News, and 500+ trusted publications. Build instant social proof, authority, and AI visibility."
+              delayOffset={0.35}
+              stagger={0.007}
+            />
           </p>
-          <div className="flex flex-row">
+
+          <motion.div
+            className="flex flex-row"
+            initial={{ opacity: 0, y: 15, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.95, ease: "easeOut" }}
+          >
             <Button className="rounded-none h-9 px-5 text-base w-full sm:w-auto font-medium shadow-sm hover:shadow-md transition-all">
               Book a call
             </Button>
-          </div>
+          </motion.div>
         </section>
       </section>
 
-      {/* Custom Hero Container (Replacing original black window graphic) */}
-      <div className="w-full max-w-7xl mx-auto rounded-2xl lg:rounded-[2.5rem] border border-border/80 bg-card/60 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col">
+      {/* Hero Interactive Frame with MediaPilot header, vertical stats & vertical media scroller */}
+      <motion.div
+        className="w-full max-w-7xl mx-auto rounded-2xl lg:rounded-[2.5rem] border border-border/80 bg-card/60 backdrop-blur-xl shadow-2xl overflow-hidden flex flex-col"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
         {/* Top Header Bar with MediaPilot Logo on Top Left */}
         <div className="flex items-center justify-between border-b border-border/60 px-6 sm:px-8 py-4 bg-muted/30">
           <div className="flex items-center gap-3">
@@ -238,8 +322,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 
